@@ -53,3 +53,24 @@ function addNewLineElement(object) {
     ul.appendChild(li);
 
   }
+-------------------task 13--------------------------------
+const btn=document.createElement("button");
+    btn.innerHTML="Edit";
+    li.appendChild(btn);
+    btn.addEventListener("click", () => {
+        console.log(object);
+        document.getElementById("name").value = object.name;
+        document.getElementById("email").value = object.emailId;
+        li.remove();
+      }); 
+
+      const delbtn=document.createElement("button");
+      delbtn.innerHTML="Delete";
+      li.appendChild(delbtn);
+      delbtn.addEventListener("click", () => {
+          localStorage.removeItem("userDetails" + object.emailId);
+          li.remove();
+        }); 
+
+  }
+  
